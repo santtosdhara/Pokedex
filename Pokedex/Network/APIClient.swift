@@ -45,7 +45,7 @@ final class APIClient: APIClientProtocol {
             do {
                 return try JSONDecoder().decode(T.self, from: data)
             } catch {
-                throw HTTPError.deconding(error)
+                throw HTTPError.decoding(error)
             }
         } catch {
             if let httpError = error as? HTTPError { throw httpError }
